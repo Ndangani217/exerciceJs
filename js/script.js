@@ -208,5 +208,5 @@ const verifierChaineCommence = {
     }
 }
 
-verifierChaineCommence.remplirChaine('Javascript');
-verifierChaineCommence.verifierChaine();
+//verifierChaineCommence.remplirChaine('Javascript');
+//verifierChaineCommence.verifierChaine();
