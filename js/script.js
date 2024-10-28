@@ -59,6 +59,7 @@ const somme = {
     firstNumber:0,
     secondNumber:0,
     calculerSomme:0,
+
     remplirLesNombres: function(firstNumber, secondNumber){
         if(firstNumber >=0 && secondNumber >= 0){
             this.firstNumber =firstNumber;
@@ -80,8 +81,36 @@ const somme = {
         console.log(`${this.calculerSomme}`);
     }
 }
+//somme.remplirLesNombres(3, 3);
+//somme.sommeNumber();
+//somme.afficherSomme();
 
+/**
+ * Ecrivez un programme JavaScript pour vérifier 
+ * une paire de nombres et renvoyer vrai si l'un 
+ * des nombres est égal à 50 ou si leur 
+ * somme est égale à 50.
+ */
+const paireNombre= {
+    firstNumber:0,
+    secondNumber:0,
+    somme:0,
+    remplirLesNombres: function(firstNumber, secondNumber){
+        if(firstNumber !=0 && secondNumber != 0){
+            this.firstNumber = firstNumber;
+            this.secondNumber = secondNumber;
+        }else{
+            console.log('Veuillez entrer un nombre différent de zéro')
+        }
+    },
 
-somme.remplirLesNombres(4, 7);
-somme.sommeNumber();
-somme.afficherSomme();
+    verifier: function(){
+        this.somme = this.firstNumber + this.secondNumber;
+        if(this.firstNumber === 50 || this.secondNumber === 50 || this.somme === 50){
+            console.log('Vrai')
+        }
+    }
+}
+
+//paireNombre.remplirLesNombres(1, 25);
+//paireNombre.verifier();
