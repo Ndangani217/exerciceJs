@@ -142,5 +142,71 @@ const entierPositifNegatif = {
     }
 }
 
-entierPositifNegatif.remplirLesNombres(1, -1);
-entierPositifNegatif.verifierEntiers();
+//entierPositifNegatif.remplirLesNombres(1, -1);
+//entierPositifNegatif.verifierEntiers();
+
+/**
+ * Exercice numéro 5
+ * Écrire un programme JavaScript pour vérifier 
+ * si un nombre positif 
+ * donné est un multiple de 3 ou de 7.
+ * 
+ */
+
+const mutipleNombre= {
+    nombre : 0,
+    entrerNombre:function(nombre){
+        if(nombre > 0){
+            this.nombre = nombre;
+        }else{
+            console.log('Veuillez entrer un nombre positif');
+        }
+    },
+
+    verifierNombre(){
+        if((this.nombre % 3)===0){
+            console.log('Ce nombre est multiple de 3');
+        }else if((this.nombre % 7) ==0){
+            console.log('Ce nombre est multiple de 7');
+        }else{
+            console.log('Ce nombre n\'est pas multiple de 3 ou de 7');
+        }
+    }
+}
+//mutipleNombre.entrerNombre(15);
+//mutipleNombre.verifierNombre();
+
+/**
+ * Exercice numéro 6
+ * Écrire un programme JavaScript pour vérifier 
+ * si une chaîne de caractères commence par « Java » 
+ * si ce n'est pas le cas.  
+ */
+
+const verifierChaineCommence = {
+    chaineCaractares:'',
+
+    remplirChaine:function(chaineCaractares){
+        if(chaineCaractares.length > 1){
+            this.chaineCaractares = chaineCaractares;
+        }else{
+            console.log('Veuillez entrer plus de caractères')
+        }
+        
+    },
+
+    verifierChaine: function(){
+        if(this.chaineCaractares !=''){
+            const verifierRetour = this.chaineCaractares.startsWith('Java');
+            if(verifierRetour){
+                console.log('Oui cette chaine commence par Java');
+            }else{
+                console.log('Non, ce n\'est pas le cas');
+            }
+        }
+        
+    }
+}
+
+verifierChaineCommence.remplirChaine('Javascript');
+verifierChaineCommence.verifierChaine();
