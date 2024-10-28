@@ -1,3 +1,11 @@
+/**
+ * Écrire un programme JavaScript pour convertir les températures de et vers Celsius, Fahrenheit.[Formule : c/5 = (f-32)/9 [ où c = température en Celsius et f = température en Fahrenheit ]
+    Résultat attendu :
+    60°C est 140 °F
+    45°F est 7.222222222222222°C
+ */
+
+
 const conversionTemperature={
     temperature:0,
     type:'',
@@ -35,6 +43,45 @@ const conversionTemperature={
 }
 
 
-conversionTemperature.entrerValeur(0, 'F')
-conversionTemperature.calculerTemperature();
-conversionTemperature.afficherTemperature();
+//conversionTemperature.entrerValeur(0, 'F')
+//conversionTemperature.calculerTemperature();
+//conversionTemperature.afficherTemperature();
+
+
+/**
+ * Exercice numéro 2
+ * Ecrivez un programme JavaScript pour calculer la somme 
+ * des deux entiers donnés. Si les deux valeurs sont identiques, 
+ * il renvoie le triple de leur somme.  
+ */
+
+const somme = {
+    firstNumber:0,
+    secondNumber:0,
+    calculerSomme:0,
+    remplirLesNombres: function(firstNumber, secondNumber){
+        if(firstNumber >=0 && secondNumber >= 0){
+            this.firstNumber =firstNumber;
+            this.secondNumber = secondNumber;
+        }else{
+            console.log('Veuillez entrer les nombres positifs (supérieur ou égale à zéro)')
+        }
+    },
+
+    sommeNumber: function(){
+        if(this.firstNumber === this.secondNumber){
+            this.calculerSomme = (this.firstNumber + this.secondNumber)*3;
+        }else{
+            this.calculerSomme = this.firstNumber + this.secondNumber;
+        }
+    },
+
+    afficherSomme: function(){
+        console.log(`${this.calculerSomme}`);
+    }
+}
+
+
+somme.remplirLesNombres(4, 7);
+somme.sommeNumber();
+somme.afficherSomme();
