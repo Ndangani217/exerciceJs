@@ -86,6 +86,7 @@ const somme = {
 //somme.afficherSomme();
 
 /**
+ * Exercice numéro 3
  * Ecrivez un programme JavaScript pour vérifier 
  * une paire de nombres et renvoyer vrai si l'un 
  * des nombres est égal à 50 ou si leur 
@@ -114,3 +115,32 @@ const paireNombre= {
 
 //paireNombre.remplirLesNombres(1, 25);
 //paireNombre.verifier();
+
+/**
+ * Exercice numéro 4
+ * Ecrivez un programme JavaScript pour vérifier 
+ * si deux entiers donnés sont positifs ou négatifs.
+ */
+
+const entierPositifNegatif = {
+    firstNumber : 0,
+    secondNumber :0,
+
+    remplirLesNombres: function(firstNumber, secondNumber) {
+        this.firstNumber = firstNumber;
+        this.secondNumber = secondNumber;
+    },
+
+    verifierEntiers: function(){
+        if(this.firstNumber > 0 && this.secondNumber > 0){
+            console.log("Le deux entiers sont posififs");
+        }else if(this.firstNumber < 0 && this.secondNumber < 0){
+            console.log("Le deux entiers sont negatifs");
+        }else{
+            console.log("L'un de nombres est posifif et l'autre negatif");
+        }
+    }
+}
+
+entierPositifNegatif.remplirLesNombres(1, -1);
+entierPositifNegatif.verifierEntiers();
