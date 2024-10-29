@@ -210,3 +210,34 @@ const verifierChaineCommence = {
 
 //verifierChaineCommence.remplirChaine('Javascript');
 //verifierChaineCommence.verifierChaine();
+
+/**
+ * Exercice numéro 7
+ * Ecrivez un programme qui vérifie 
+ * si un caractère spécifié existe 
+ * entre la 2ème et la 4ème position 
+ * dans une chaîne de caractères donnée. 
+ */
+
+const postionCaractere = {
+    chaineCaracteres:'',
+    caractere:'',
+
+    remplirValeur:function(chaineCaractares, caractere){
+        this.chaineCaracteres = chaineCaractares;
+        this.caractere = caractere;
+    },
+
+    comparaison: function(){
+        const deuxiemePosition = this.chaineCaracteres.charAt(1);
+        const quatriemePosition = this.chaineCaracteres.charAt(3);
+        if(deuxiemePosition===this.caractere && quatriemePosition=== this.caractere){
+            console.log('Vrai, Le caractère existe dans cette chaine à la deuxième et troisième postion');
+        }else{
+            console.log('Faux, il n\'existe pas')
+        }
+    }
+}
+
+postionCaractere.remplirValeur('lulu et maman  sont à la maison', 'a');
+postionCaractere.comparaison();
