@@ -187,7 +187,7 @@ const verifierChaineCommence = {
     chaineCaractares:'',
 
     remplirChaine:function(chaineCaractares){
-        if(chaineCaractares.length > 1){
+        if(chaineCaractares !=''){
             this.chaineCaractares = chaineCaractares;
         }else{
             console.log('Veuillez entrer plus de caractères')
@@ -329,6 +329,39 @@ const changerPremiereLettreMajuscule = {
     }
 }
 
-changerPremiereLettreMajuscule.remplirChaine('eritier');
-console.log(changerPremiereLettreMajuscule.changerChaine());
+//changerPremiereLettreMajuscule.remplirChaine('eritier');
+//console.log(changerPremiereLettreMajuscule.changerChaine());
 
+
+/** 
+ * Exercice numéro 11
+ * Écrivez une fonction JavaScript qui vérifie 
+ * si une chaîne passée est un palindrome ou non ?
+ * Un palindrome est un mot, une phrase ou une 
+ * séquence qui se lit de la même manière à 
+ * l'envers qu'à l'endroit, par exemple, madam.
+ */
+
+const palindrome = {
+    chaine:'',
+
+    remplirChaine:function(chaine){
+        if(chaine !=''){
+            this.chaine = chaine;
+        }else{
+            console.log('Veuillez entrer plus de caractères');
+        }
+        
+    },
+    verifierPalindrome: function(){
+        const temp = this.chaine.split('').reverse().join('');
+        if(temp === this.chaine){
+            console.log(`Oui, ${this.chaine}  est un palindrome`);
+        }else{
+            console.log(`Non, ${this.chaine} n'est pas un palindrome`);
+        }
+    }
+}
+
+palindrome.remplirChaine('roccor');
+palindrome.verifierPalindrome();
