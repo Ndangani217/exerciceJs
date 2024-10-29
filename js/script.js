@@ -275,3 +275,32 @@ const conversionTroisPremiere = {
 
 //conversionTroisPremiere.remplirChaine("pa")
 //conversionTroisPremiere.convertirChaine();
+
+/**
+ * Écrire un programme JavaScript pour 
+ * inverser une chaîne de caractères donnée.  
+ */
+
+const inverserChaineCaracteres = {
+    chaine:'',
+    nouvelleChaine:'',
+
+    remplirChaine: function(chaine){
+        if(chaine !=''){
+           this.chaine = chaine;
+        }else{
+            console.log('Veuillez entrer une chaine de caractère')
+        }
+    },
+    
+    inversionChaine: function(){
+        if(this.chaine != ''){
+            this.nouvelleChaine = this.chaine.split('').reverse().join('');
+            console.log(this.nouvelleChaine);
+        }
+    }
+}
+
+
+inverserChaineCaracteres.remplirChaine('jour');
+inverserChaineCaracteres.inversionChaine();
