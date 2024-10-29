@@ -363,5 +363,39 @@ const palindrome = {
     }
 }
 
-palindrome.remplirChaine('roccor');
-palindrome.verifierPalindrome();
+//palindrome.remplirChaine('roccor');
+//palindrome.verifierPalindrome();
+
+
+/**
+ * Exercice numéro 12
+ * Ecrivez une fonction JavaScript qui génère 
+ * toutes les combinaisons d'une chaîne de caractères.
+ * Exemple de chaîne : 'dog'
+ * Résultat attendu : d,do,dog,o,og,g
+ */
+
+const genererCombinaison = {
+    chaine:'',
+
+    remplirChaine:function(chaine){
+        this.chaine = chaine;
+    },
+
+    generer: function(){
+        const taille = this.chaine.length;
+        let resultat =  [];
+        for (let i = 0; i < taille; i++) {
+            let tempo = '';
+            for (let j = i; j < taille; j++) {
+                tempo += this.chaine.slice(j, j + 1);
+                resultat.push(tempo)
+            }
+        }
+        console.log(resultat.join(' '));
+    }
+}
+
+
+genererCombinaison.remplirChaine('papa');
+genererCombinaison.generer();
