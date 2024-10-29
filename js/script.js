@@ -385,6 +385,7 @@ function genererCombinaison (chaine){
 
 
 /**
+ * Exercice numéro 13
  * Ecrivez une fonction JavaScript qui 
  * accepte une chaîne de caractères comme
  * paramètre et convertit la première lettre 
@@ -401,4 +402,20 @@ function convertitPremierLettreMots(chaine){
 //console.log(convertitPremierLettreMots("le renard brun rapide"));
 
 
+/**
+ * Écrivez une fonction JavaScript qui accepte
+ *  une chaîne de caractères comme paramètre 
+ * et qui trouve le mot le plus long dans
+ *  la chaîne.
+ * Exemple de chaîne : « Tutoriel de développement web ».
+ * Résultat attendu : 'Développement'
+ * 
+ */
 
+function trouverLeMotLong(chaine){
+    let tab = chaine.split(' ');
+    const motLong =  tab.reduce((a, b) => a.length < b.length ? b : a, "");
+    return motLong;
+}
+
+console.log(trouverLeMotLong('Tutoriel de développement web'))
