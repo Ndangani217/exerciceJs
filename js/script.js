@@ -277,6 +277,7 @@ const conversionTroisPremiere = {
 //conversionTroisPremiere.convertirChaine();
 
 /**
+ * Exercice numéro 9
  * Écrire un programme JavaScript pour 
  * inverser une chaîne de caractères donnée.  
  */
@@ -302,5 +303,32 @@ const inverserChaineCaracteres = {
 }
 
 
-inverserChaineCaracteres.remplirChaine('jour');
-inverserChaineCaracteres.inversionChaine();
+//inverserChaineCaracteres.remplirChaine('jour');
+//inverserChaineCaracteres.inversionChaine();
+
+/**
+ * Exercice numéro 10
+ * Écrire un programme JavaScript pour 
+ * mettre en majuscule la première lettre 
+ * de chaque mot d'une chaîne donnée.
+ */
+const changerPremiereLettreMajuscule = {
+    chaine:'',
+
+    remplirChaine: function(chaine){
+        if(chaine!=''){
+            this.chaine = chaine;
+        }else{
+            console.log('Veuillez entrer une chaine avec de caractères')
+        }
+    },
+
+    changerChaine: function(){
+        const chaineTempo = this.chaine;
+        return chaineTempo.charAt(0).toUpperCase() + chaineTempo.slice(1);
+    }
+}
+
+changerPremiereLettreMajuscule.remplirChaine('eritier');
+console.log(changerPremiereLettreMajuscule.changerChaine());
+
