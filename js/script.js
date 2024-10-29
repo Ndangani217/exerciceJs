@@ -239,5 +239,39 @@ const postionCaractere = {
     }
 }
 
-postionCaractere.remplirValeur('lulu et maman  sont à la maison', 'a');
-postionCaractere.comparaison();
+//postionCaractere.remplirValeur('lulu et maman  sont à la maison', 'a');
+//postionCaractere.comparaison();
+
+/**
+ * Exercice numéro 8
+ * Écrivez un programme JavaScript pour produire 
+ * une nouvelle chaîne contenant les 3 premiers 
+ * caractères en minuscules à partir d'une chaîne 
+ * donnée. Si la longueur de la chaîne est inférieure à 3, 
+ * tous les caractères sont convertis en majuscules. 
+ */
+
+const conversionTroisPremiere = {
+    chaine:'',
+    nouvelleChaine:'',
+    remplirChaine: function(chaine){
+        if(chaine.length !=''){
+            this.chaine = chaine;
+        }else{
+            console.log('Veuillez saisir une chaine de caractères')
+        }
+    },
+
+    convertirChaine: function(){
+        const longueur = this.chaine.length;
+        if(longueur < 3){
+            this.nouvelleChaine = (this.chaine).toUpperCase()
+        }else{
+            this.nouvelleChaine = this.chaine.slice(0, 3).toLowerCase();
+        }
+        console.log(this.nouvelleChaine)
+    }    
+}
+
+//conversionTroisPremiere.remplirChaine("pa")
+//conversionTroisPremiere.convertirChaine();
