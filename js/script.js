@@ -342,25 +342,16 @@ const changerPremiereLettreMajuscule = {
  * l'envers qu'à l'endroit, par exemple, madam.
  */
 
-const palindrome = {
-    chaine:'',
-
-    remplirChaine:function(chaine){
-        if(chaine !=''){
-            this.chaine = chaine;
-        }else{
-            console.log('Veuillez entrer plus de caractères');
-        }
-        
-    },
-    verifierPalindrome: function(){
-        const temp = this.chaine.split('').reverse().join('');
-        if(temp === this.chaine){
-            console.log(`Oui, ${this.chaine}  est un palindrome`);
-        }else{
-            console.log(`Non, ${this.chaine} n'est pas un palindrome`);
-        }
+function palindrome(chaine){
+    const temp = chaine.split('').reverse().join('');
+    let valeurRetour ='';
+    if(temp === this.chaine){
+        valeurRetour = `Oui, ${chaine}  est un palindrome`;
+    }else{
+        valeurRetour = `Non, ${chaine} n'est pas un palindrome`;
     }
+
+    return valeurRetour;
 }
 
 //palindrome.remplirChaine('roccor');
@@ -375,27 +366,39 @@ const palindrome = {
  * Résultat attendu : d,do,dog,o,og,g
  */
 
-const genererCombinaison = {
-    chaine:'',
-
-    remplirChaine:function(chaine){
-        this.chaine = chaine;
-    },
-
-    generer: function(){
-        const taille = this.chaine.length;
-        let resultat =  [];
-        for (let i = 0; i < taille; i++) {
-            let tempo = '';
-            for (let j = i; j < taille; j++) {
-                tempo += this.chaine.slice(j, j + 1);
-                resultat.push(tempo)
-            }
+function genererCombinaison (chaine){
+    const taille = chaine.length;
+    const resultat =  [];
+    for (let i = 0; i < taille; i++) {
+        let tempo = '';
+        for (let j = i; j < taille; j++) {
+            tempo += chaine.charAt(j)
+            resultat.push(tempo)
         }
-        console.log(resultat.join(' '));
     }
+    return resultat.join(' ');
 }
 
 
-genererCombinaison.remplirChaine('papa');
-genererCombinaison.generer();
+//genererCombinaison.remplirChaine('papa');
+//genererCombinaison.generer();
+
+
+/**
+ * Ecrivez une fonction JavaScript qui 
+ * accepte une chaîne de caractères comme
+ * paramètre et convertit la première lettre 
+ * de chaque mot en majuscule.
+ * Exemple de chaîne : 'le renard brun rapide'
+ * Résultat attendu : 'Le Renard Brun Rapide
+ */
+
+function convertitPremierLettreMots(chaine){
+    const mots = chaine.split(' ');
+    const nouvelleChaine = mots.map((mot) => mot.charAt(0).toUpperCase() + mot.slice(1)).join(' ') ;
+    return nouvelleChaine;
+}
+//console.log(convertitPremierLettreMots("le renard brun rapide"));
+
+
+
