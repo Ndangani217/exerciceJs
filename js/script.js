@@ -353,7 +353,6 @@ function palindrome(chaine){
 
     return valeurRetour;
 }
-
 //palindrome.remplirChaine('roccor');
 //palindrome.verifierPalindrome();
 
@@ -403,6 +402,7 @@ function convertitPremierLettreMots(chaine){
 
 
 /**
+ * Exercice numéro 14
  * Écrivez une fonction JavaScript qui accepte
  *  une chaîne de caractères comme paramètre 
  * et qui trouve le mot le plus long dans
@@ -418,4 +418,149 @@ function trouverLeMotLong(chaine){
     return motLong;
 }
 
-console.log(trouverLeMotLong('Tutoriel de développement web'))
+//console.log(trouverLeMotLong('Tutoriel de développement web'))
+
+/**
+ * Exercice nuémro 15
+ * Ecrivez une fonction JavaScript qui accepte 
+ * un argument et renvoie le type.Note : Il y a six 
+ * valeurs possibles que typeof renvoie : 
+ * objet, booléen, fonction, nombre, 
+ * chaîne de caractères et indéfini.
+ * 
+ */
+
+function typeNote(note){
+    return typeof note;
+}
+/*
+console.log(typeNote({}));
+console.log(typeNote(true));
+console.log(typeNote(function(){}));
+console.log(typeNote(42));
+console.log(typeNote(42.7));
+console.log(typeNote('heritier'));
+console.log(typeNote(undefined));
+*/
+
+/**
+ * Ecrire une fonction JavaScript pour vérifier 
+ * si une input est un tableau ou non.
+ * Données de test : console.log(is_array('w3resource'));
+ * console.log(is_array([1, 2, 4, 0])) ; 
+ * faux
+ * vrai
+ */
+
+function is_array(input){
+    return Array.isArray(input);
+}
+
+//const tab = [1, 3, 4]
+//console.log(is_array('papa'))
+
+/**
+ * Écrivez une fonction JavaScript pour obtenir 
+ * le premier élément d'un tableau. En passant le paramètre 'n', la fonction renverra les 'n' premiers éléments du tableau.
+ * Données de test :
+ * console.log(first([7, 9, 0, -2])) ;
+ * console.log(first([],3)) ;
+ * console.log(first([7, 9, 0, -2],3)) ;
+ * console.log(first([7, 9, 0, -2],6)) ;
+ * console.log(first([7, 9, 0, -2],-3)) ;
+ * Résultat attendu :
+ * 7
+ * []
+ * [7, 9, 0]
+ * [7, 9, 0, -2]
+ * []
+ * 
+ */
+
+function first(tab, n){
+    return tab.slice(0, n);
+}
+
+//console.log(first([7, 9, 0, -2])) ;
+//console.log(first([7, 9, 0, -2],3)) ;
+
+
+/**
+ * Écrivez un programme JavaScript simple pour réunir tous les éléments
+ * du tableau suivant en une chaîne de caractères.
+ * Exemple de tableau : myColor = [ “Rouge” ,  “Vert” , “Blan” ,  “Noir “] ;
+ * Résultat attendu :
+ * « Rouge,Vert,Blanc,Noir »
+ * « Rouge, vert, blanc, noir
+ * « Rouge+vert+blanc+noir »
+ */
+
+const reunirElementsTableau = {
+    tableau:[],
+    premiereChaine:'',
+    deuxiemeChaine:'',
+    troisiemeChaine:'',
+
+    remplirleTableau:function(tableau){
+        this.tableau = tableau;
+    },
+
+    transformerTableauEnChaine: function(){
+        this.premiereChaine = this.tableau.join(',');
+        this.deuxiemeChaine   = this.tableau.join(', ');
+        this.troisiemeChaine = this.tableau.join("+");
+    },
+
+    afficherLeResultat: function(){
+        console.log(`${this.premiereChaine}\n${this.deuxiemeChaine}\n${this.troisiemeChaine}`)
+    }
+}
+/*
+myColor = ["Rouge", "Vert", "Blan", "Noir"];
+reunirElementsTableau.remplirleTableau(myColor);
+reunirElementsTableau.transformerTableauEnChaine();
+reunirElementsTableau.afficherLeResultat();
+*/
+
+/**
+ * Exercice numéro 21
+ * Écrivez un programme JavaScript pour afficher 
+ * le statut de lecture (c'est-à-dire afficher
+ * le nom du livre, le nom de l'auteur et 
+ * le statut de lecture) des livres suivants.
+ */
+
+const library = [ 
+    {
+        author: 'Bill Gates',
+        title: 'The Road Ahead',
+        readingStatus: true
+    },
+    {
+        author: 'Steve Jobs',
+        title: 'Walter Isaacson',
+        readingStatus: true
+    },
+    {
+        author: 'Suzanne Collins',
+        title:  'Mockingjay: The Final Book of The Hunger Games', 
+        readingStatus: false
+    }]
+
+
+const statutLecture = {
+    library:[],
+
+    remplirLibrary : function(library){
+        this.library = library;
+    },
+
+    afficherLivre : function(){
+        this.library.forEach(livre => {
+            console.log(`${livre.author} ${livre.title} ${livre.readingStatus}`)
+        });
+    }
+}
+
+statutLecture.remplirLibrary(library);
+statutLecture.afficherLivre();
